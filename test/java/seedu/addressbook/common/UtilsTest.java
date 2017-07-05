@@ -1,5 +1,5 @@
 package seedu.addressbook.common;
-
+import java.util.ArrayList;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -35,6 +35,9 @@ public class UtilsTest {
         // confirms nulls inside the list are not considered
         List<Object> nullList = Arrays.asList((Object) null);
         assertFalse(Utils.isAnyNull(nullList));
+        
+        ArrayList nullArrayList = new ArrayList();
+        assertFalse(Utils.isAnyNull(nullArrayList));
     }
 
     @Test
@@ -51,7 +54,10 @@ public class UtilsTest {
         // all objects unique
         assertAreUnique("abc", "ab", "a");
         assertAreUnique(1, 2);
-
+        
+        List<Object> duplicatedList = Arrays.asList("1","1");
+        assertAreUnique(duplicatedList);
+        
         // some identical objects
         assertNotUnique("abc", "abc");
         assertNotUnique("abc", "", "abc", "ABC");
