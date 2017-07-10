@@ -1,6 +1,6 @@
 package seedu.addressbook.logic;
 
-
+import seedu.addressbook.storage.Storage;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class LogicTest {
     @Rule
     public TemporaryFolder saveFolder = new TemporaryFolder();
 
-    private StorageFile saveFile;
+    private Storage saveFile;
     private AddressBook addressBook;
     private Logic logic;
 
